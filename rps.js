@@ -7,13 +7,13 @@ function computerPlay() {
 computerPlay();
 
 //Computer Wert in einer Variable speichern
-const computerSelection = computerPlay().toLowerCase();
+//const computerSelection = computerPlay().toLowerCase();
 
 //Funktion zur Auswahl durch den Spieler
-const playerSelection = prompt("Scissors, Paper or Rock?").toLowerCase();
+//const playerSelection = prompt("Scissors, Paper or Rock?").toLowerCase();
 
-console.log(computerSelection);
-console.log(playerSelection);
+//console.log(computerSelection);
+//console.log(playerSelection);
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -32,6 +32,27 @@ function playRound(playerSelection, computerSelection) {
         return ("Stein zerstört Schere, Du gewinnst");
     }
   }
-  
-  console.log(playRound(playerSelection, computerSelection));
 
+//Loop mit 5 Runden vom Spiel
+//Punktestand zählen und ausgeben
+//Am Ende den Gewinner feststellen
+
+//console.log(playRound(playerSelection, computerSelection));
+//console.log(playRound(playerSelection, computerSelection));
+//console.log(playRound(playerSelection, computerSelection));
+
+
+n=10
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i)
+        const playerSelection = prompt("Scissors, Paper or Rock?").toLowerCase();
+        const computerSelection = computerPlay().toLowerCase();
+        console.log(playerSelection)
+        console.log(computerSelection)
+        console.log(playRound(playerSelection, computerSelection));
+    }
+  }
+
+game();
