@@ -20,16 +20,16 @@ function playRound(playerSelection, computerSelection) {
         return("Unentschieden");
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
-        return ("Papier umwickelt den Stein, leider verloren");
+        return ("Verloren");
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        return ("Papier umwickelt den Stein, Du gewinnst");
+        return ("Gewonnen");
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
-        return ("Stein zerstört Schere, Du verlierst");
+        return ("Verloren");
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return ("Stein zerstört Schere, Du gewinnst");
+        return ("Gewonnen");
     }
   }
 
@@ -41,8 +41,8 @@ function playRound(playerSelection, computerSelection) {
 //console.log(playRound(playerSelection, computerSelection));
 //console.log(playRound(playerSelection, computerSelection));
 
-
-n=10
+let playerCount = 0;
+let computerCount = 0;
 
 function game() {
     for (let i = 0; i < 5; i++) {
@@ -52,6 +52,32 @@ function game() {
         console.log(playerSelection)
         console.log(computerSelection)
         console.log(playRound(playerSelection, computerSelection));
+        
+        let roundResult = playRound(playerSelection, computerSelection);
+    
+        if (roundResult === "Gewonnen") {
+            playerCount++;
+        }
+        else if (roundResult === "Verloren") {
+            computerCount++;
+        }
+        else if (roundResult === "Unentschieden") {
+            console.log("Unentschieden");
+        }
+        else {
+            console.log("not working");
+        }
+        console.log(computerCount);
+        console.log("Punkte Computer "+ computerCount + " zu " + playerCount + " Punkte Spieler");
+    }
+    if (playerCount===computerCount) {
+        console.log("Unentschieden");
+    }
+    if (playerCount>computerCount) {
+        console.log("Ergebnis: Du hast gewonnen! MEGA! :)");
+    }
+    else {
+        console.log("Ergebnis: Du hast verloren, sorry :)");
     }
   }
 
