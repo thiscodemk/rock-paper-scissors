@@ -6,6 +6,7 @@ function computerPlay() {
 
 computerPlay();
 
+//Branch Test
 //Computer Wert in einer Variable speichern
 //const computerSelection = computerPlay().toLowerCase();
 
