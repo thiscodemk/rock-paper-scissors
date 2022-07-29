@@ -1,3 +1,9 @@
+let uno = 2;
+let computerSelection = 3;
+
+document.getElementById('uno').innerHTML = playerSelection;
+document.getElementById('#computerSelection').innerHTML = computerSelection;
+
 function computerPlay() {
     const items = ['scissors','paper','rock'];
     var randomItem = items[Math.floor(Math.random()*items.length)];
@@ -6,17 +12,8 @@ function computerPlay() {
 
 computerPlay();
 
-//Branch Test
-//Computer Wert in einer Variable speichern
-//const computerSelection = computerPlay().toLowerCase();
-
-//Funktion zur Auswahl durch den Spieler
-//const playerSelection = prompt("Scissors, Paper or Rock?").toLowerCase();
-
-//console.log(computerSelection);
-//console.log(playerSelection);
-
 function playRound(playerSelection, computerSelection) {
+    console.log(playerSelection,computerSelection);
     if (playerSelection === computerSelection) {
         return("Unentschieden");
     }
@@ -33,6 +30,32 @@ function playRound(playerSelection, computerSelection) {
         return ("Gewonnen");
     }
   }
+//________________________________________________________________________________________________
+
+//1.Wir brauchen Buttons, nach dem Klick muss die Auswahl von Spieler und Computer übergeben werden.
+// connected buttons with each choice
+window.onload=function(){
+    const buttonScissors = document.querySelector('#buttonScissors');
+    buttonScissors.addEventListener('click', () => {
+    playRound("scissors",computerPlay());
+})
+
+const buttonRock = document.querySelector('#buttonRock');
+    buttonRock.addEventListener('click', () => {
+    playRound("rock",computerPlay());
+})
+
+const buttonPaper = document.querySelector('#buttonPaper');
+    buttonPaper.addEventListener('click', () => {
+    playRound("paper",computerPlay());
+})
+
+}
+
+//2.Anschließend muss daraus abgeleitet werden, wer die Runde gewonnen hat. 
+//2.1 Danach muss über das Ergebnis wer gewonnen hat, entweder playerCount oder computerCount erhöht werden.
+//2.2 Die Variablen playerCount und computerCount sollen in einem Element auf der Seite angezeigt werden
+//3. Wenn entweder playerCount oder computerCount ===5 ist, diesen als Gewinner darstellen
 
 //Loop mit 5 Runden vom Spiel
 //Punktestand zählen und ausgeben
@@ -46,7 +69,7 @@ let playerCount = 0;
 let computerCount = 0;
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
         console.log(i)
         const playerSelection = prompt("Scissors, Paper or Rock?").toLowerCase();
         const computerSelection = computerPlay().toLowerCase();
@@ -71,7 +94,7 @@ function game() {
         console.log(computerCount);
         console.log("Punkte Computer "+ computerCount + " zu " + playerCount + " Punkte Spieler");
     }
-    if (playerCount===computerCount) {
+    if (playerCount==computerCount) {
         console.log("Unentschieden");
     }
     if (playerCount>computerCount) {

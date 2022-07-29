@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="rps.js"></script>
+    <script src="rps_withui_2.js"></script>
 </head>
 <body>
+    <p id="demo"></p>
+    <p id="main"></p>
     <h1>Schere, Stein & Papier</h1>
     <div class="main">
-        <button class="Schere"></button>
-        <button class="Stein"></button>
-        <button class="Papier"></button>
+        <button id="Scissors">Schere</button>
+        <button id="Rock">Stein</button>
+        <button id="Paper">Papier</button>
     </div>
-    <div class="result">
+    <div class="choices">
+        <h3>Auswahl</h3>
+        <p>Computer: <span id="computerSelection"></span></p>
+        <p>Player: <span id="playerSelection"></span></p>
+        <p>Result: <span id="result"></span></p>
     </div>
-    
+    <div class="count">
+        <h2>Spielstand</h2>
+        <h3>Spieler: <span id="playerCount"></span></h3> 
+        <h3>Computer: <span id="computerCount"></span></h3>
+        <h2>Endergebnis: <span id="endResult"></span></h2>
+    </div>
 </body>
 </html>
