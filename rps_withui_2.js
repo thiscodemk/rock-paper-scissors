@@ -43,6 +43,26 @@ window.onload=function(){
             result = "you win!"
             userCount++;
         }
+        if (computerChoice === 'Paper' && userChoice === 'Scissors'){
+            result = "you win!"
+            userCount++;
+        }
+        if (computerChoice === 'Scissors' && userChoice === 'Rock'){
+            result = "you win!"
+            userCount++;
+        }
+        if (computerChoice === 'Paper' && userChoice === 'Rock'){
+            result = "you loose!"
+            computerCount++;
+        }
+        if (computerChoice === 'Scissors' && userChoice === 'Paper'){
+            result = "you loose!"
+            computerCount++;
+        }
+        if (computerChoice === 'Rock' && userChoice === 'Scissors'){
+            result = "you loose!"
+            computerCount++;
+        }
         displayResult.innerHTML = result;
         displayComputerCount.innerHTML = computerCount;
         displayUserCount.innerHTML = userCount;
